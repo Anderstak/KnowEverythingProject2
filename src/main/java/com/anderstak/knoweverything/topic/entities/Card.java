@@ -1,32 +1,48 @@
 package com.anderstak.knoweverything.topic.entities;
 
+import com.anderstak.knoweverything.Util;
 import javafx.scene.image.Image;
+import javafx.scene.image.PixelFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.imageio.ImageIO;
+import javax.persistence.*;
+import java.awt.image.RenderedImage;
+import java.io.*;
 
 @Entity
 public class Card {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name = "";
 
     private String text = "";
 
-//    private Image image;
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    private byte[] image;
+
+    public Card() {
+
+    }
 
     public String getName() {
         return name;
     }
 
-//    public Image getImage() {
-//        return image;
-//    }
+
+    public Image getImage() {
+        try {
+            Image im = Util.bytesToImage(this.image);
+            System.out.println(im.getHeight());
+            return im;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public Card(String name) {
         this.name = name;
@@ -40,8 +56,8 @@ public class Card {
         this.text = text;
     }
 
-//    public void setImage(Image image) {
-//        this.image = image;
-//    }
+    public void setImage(File image) throws IOException {
+      this.image = Util.imageToBytes(image);
+    }
 }
 

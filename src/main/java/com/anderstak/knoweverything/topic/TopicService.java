@@ -20,6 +20,15 @@ public class TopicService {
     public void addTopic(Topic topic) {
         this.topicRepository.save(topic);
     }
+
+    public void saveTopic(Topic topic) {
+        this.topicRepository.save(topic);
+    }
+
+    public void clearAllTopics() {
+        this.topicRepository.deleteAll();
+    }
+
 }
 
 

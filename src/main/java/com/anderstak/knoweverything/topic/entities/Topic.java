@@ -1,5 +1,10 @@
 package com.anderstak.knoweverything.topic.entities;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
@@ -12,18 +17,16 @@ public class Topic {
     private Long id;
 
     // имя
-    private String nameTopic = "Исторические факты";
+    private String nameTopic = "Названеи темы";
     // описание
-    private String text = "Супер-пупер фактики.";
+    private String text = "Описание темы";
 
-    private int currentCard = 0;
-
-    //ArrayList Card
-
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Card> cards = new ArrayList<>();
 
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Question> questions = new ArrayList<>();
 
     public String getNameTopic() {
@@ -34,9 +37,16 @@ public class Topic {
         return text;
     }
 
-    public List<Card> getArrayList() {
+    public List<Card> getCards() {
         return this.cards;
     }
+
+    public void addCard(Card c) {
+        this.cards.add(c);
+    }
+
+    private int currentCard = 0;
+    private int currentQuestion = 0;
 
     public Card getPreviousCard() {
         if (this.currentCard >= 1) {
@@ -56,9 +66,21 @@ public class Topic {
         }
     }
 
-    // эррейлист вопросов
+    public Card getCurrentCard() {
+        if (this.currentCard >= this.cards.size()) {
+            this.currentCard = 0;
+        }
+        return this.cards.get(this.currentCard);
+    }
 
+    public Card getPreviousQuestion() {
+        // TODO: аналогично, как с карточками
+        return null;
+    }
 
-
+    public Card getNextQuestion() {
+        // TODO: аналогично, как с карточками
+        return null;
+    }
 
 }

@@ -29,18 +29,7 @@ public class TopicController implements Initializable {
     public ListView topicListView;
     public AnchorPane root;
 
-
     public final ObservableList<Topic> topics = FXCollections.observableArrayList();
-
-
-    public void topicSelected(Event actionEvent) throws IOException {
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CardScene.fxml"));
-        SubScene scene = new SubScene(fxmlLoader.load(), 160, 240);
-        this.root.getChildren().clear();
-        this.root.getChildren().add(scene.getRoot());
-    }
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -78,6 +67,8 @@ public class TopicController implements Initializable {
     }
 
     public void topicSelected(MouseEvent mouseEvent, Topic selectedItem) throws IOException {
+        Application.currentTopic = selectedItem;
+
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("CardScene.fxml")));
         Stage appStage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         appStage.setScene(scene);

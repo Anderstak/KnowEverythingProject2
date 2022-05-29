@@ -28,17 +28,8 @@ public class TopicListViewCell extends HBox {
     }
 
     public void setTopic(Topic topic) {
-//        this.wordLabel.setText(definition.getWord());
-//        int n = definition.getDefinitions().size();
-//        if (n % 10 == 1) {
-//            this.commentLabel.setText("Найдена " + n + " статья.");
-//        } else if ((n % 10 >= 2) && (n % 10 <= 4)) {
-//            this.commentLabel.setText("Найдено " + n + " статьи.");
-//        } else {
-//            this.commentLabel.setText("Найдено " + n + " статей.");
-//        }
-this.topicNameLabel.setText(topic.getNameTopic());
-this.descriptionLabel.setText(topic.getText());
+        this.topicNameLabel.setText(topic.getNameTopic());
+        this.descriptionLabel.setText(topic.getText());
     }
 
 
