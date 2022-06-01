@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Topic {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     // имя
@@ -21,11 +21,11 @@ public class Topic {
     // описание
     private String text = "Описание темы";
 
-    @OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Card> cards = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Question> questions = new ArrayList<>();
 
@@ -45,8 +45,17 @@ public class Topic {
         this.cards.add(c);
     }
 
-    private int currentCard = 0;
-    private int currentQuestion = 0;
+    public int currentCard = 0;
+    public int currentQuestion = 0;
+
+    public  int getCardSize(){
+        return this.cards.size();
+    }
+
+    public  int getQuestionSize(){
+        return this.questions.size();
+    }
+
 
     public Card getPreviousCard() {
         if (this.currentCard >= 1) {
@@ -61,7 +70,7 @@ public class Topic {
         if (this.currentCard <= this.cards.size()) {
             this.currentCard += 1;
             return this.cards.get(this.currentCard);
-        } else{
+        } else {
             return null;
         }
     }
@@ -75,12 +84,21 @@ public class Topic {
 
     public Card getPreviousQuestion() {
         // TODO: аналогично, как с карточками
-        return null;
+        if (this.currentQuestion >= 1) {
+            this.currentQuestion = this.currentQuestion - 1;
+            return this.cards.get(this.currentQuestion);
+        } else {
+            return null;
+        }
     }
 
     public Card getNextQuestion() {
         // TODO: аналогично, как с карточками
-        return null;
+        if (this.currentQuestion >= 1) {
+            this.currentQuestion += 1;
+            return this.cards.get(this.currentQuestion);
+        } else {
+            return null;
+        }
     }
-
 }

@@ -34,7 +34,7 @@ public class TopicController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        topics.addAll(this.topics);
+        //topics.addAll(this.topics);
         this.topicListView.setItems(this.topics);
 
         this.topics.addAll(Application.topicService.getTopics());

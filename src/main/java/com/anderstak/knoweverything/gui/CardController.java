@@ -7,9 +7,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
+import java.awt.*;
 import java.awt.image.RenderedImage;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,7 +24,7 @@ import java.io.File;
 public class CardController implements Initializable {
 
     // TODO: Заменить на что-нибудь другое, например,  TextField
-    public TextArea TextMid;
+    
     public Button btBackMid;
     public Label btLMid;
     public Button btForwardMid;
@@ -31,6 +34,7 @@ public class CardController implements Initializable {
     public Label LNameCard;
 
     private final Topic topic = Application.currentTopic;
+    public Text TextCard;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -55,24 +59,31 @@ public class CardController implements Initializable {
     void updateButtons() {
 
         // TODO: update buttons!
-//        if (/* this is first card */) {
-//            // disable back button
-//        }
-//        if (/* this is last card */) {
-//            // disable forward button
-//        }
+        if (this.topic.currentCard==0) {//сравниваем два числа
+            // disable back button
+            this.btBackMid.setDisable(true);
+        }else{
+            this.btBackMid.setDisable(false);
+        }
 
+        if (this.topic.currentCard==this.topic.getCardSize()-1) { //условие того, что это последняя карточка
+            // disable forward
+            this.btForwardMid.setDisable(true);
+        }else{
+            this.btForwardMid.setDisable(false);
+        }
     }
 
-    void setCard(Card card) {
 
+
+    void setCard(Card card) {
         if (card == null) {
             throw new RuntimeException("Такой карточки нет! Это было неожиданно...");
         }
 
         this.LNameCard.setText(card.getName());
         this.ImageMid.setImage(card.getImage());
-        this.TextMid.setText(card.getText());
+        this.TextCard.setText(card.getText());
     }
 
 }

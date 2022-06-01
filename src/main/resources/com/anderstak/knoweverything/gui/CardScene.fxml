@@ -3,22 +3,26 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anderstak.knoweverything.gui.CardController">
    <items>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="247.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="247.0" style="-fx-background-color: #08e8de;">
          <children>
-            <TextArea id="TextMid" fx:id="TextMid" layoutX="3.0" layoutY="85.0" prefHeight="200.0" prefWidth="175.0" />
             <Button id="btBMid" fx:id="btBackMid" layoutX="36.0" layoutY="350.0" mnemonicParsing="false" text="Назад" textFill="BLUE" />
+            <Text fx:id="TextCard" fill="#ff6d6d" layoutX="16.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="148.1366958618164">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="421.0" prefWidth="455.0">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="421.0" prefWidth="455.0" style="-fx-background-color: #08e8de;">
          <children>
-            <Label id="btLMid" fx:id="btLMid" layoutX="14.0" layoutY="14.0" text="Запоминай" textFill="#fffc00">
+            <Label id="btLMid" fx:id="btLMid" layoutX="14.0" layoutY="14.0" text="Запоминай" textFill="#0055ff">
                <font>
                   <Font size="18.0" />
                </font>
