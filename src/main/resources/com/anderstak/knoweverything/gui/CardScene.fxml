@@ -34,6 +34,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
+            <Button fx:id="btwatchQuestion" layoutX="92.0" layoutY="310.0" mnemonicParsing="false" onAction="#onSwapSceneClicked" text="Посмотреть вопросы:)" />
          </children>
       </AnchorPane>
    </items>

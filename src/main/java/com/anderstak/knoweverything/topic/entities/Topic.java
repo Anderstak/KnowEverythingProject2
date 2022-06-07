@@ -16,6 +16,15 @@ public class Topic {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    public Topic() {
+
+    }
+
+    public Topic(String nameTopic, String text) {
+        this.nameTopic = nameTopic;
+        this.text = text;
+    }
+
     // имя
     private String nameTopic = "Названеи темы";
     // описание
@@ -48,11 +57,11 @@ public class Topic {
     public int currentCard = 0;
     public int currentQuestion = 0;
 
-    public  int getCardSize(){
+    public int getCardSize() {
         return this.cards.size();
     }
 
-    public  int getQuestionSize(){
+    public int getQuestionSize() {
         return this.questions.size();
     }
 
@@ -82,23 +91,35 @@ public class Topic {
         return this.cards.get(this.currentCard);
     }
 
-    public Card getPreviousQuestion() {
+    public Question getPreviousQuestion() {
         // TODO: аналогично, как с карточками
         if (this.currentQuestion >= 1) {
             this.currentQuestion = this.currentQuestion - 1;
-            return this.cards.get(this.currentQuestion);
+            return this.questions.get(this.currentQuestion);
         } else {
             return null;
         }
     }
 
-    public Card getNextQuestion() {
+    public Question getNextQuestion() {
         // TODO: аналогично, как с карточками
         if (this.currentQuestion >= 1) {
             this.currentQuestion += 1;
-            return this.cards.get(this.currentQuestion);
+            return this.questions.get(this.currentQuestion);
         } else {
             return null;
         }
+    }
+
+    public void addQuestion(Question firstt) {
+        this.questions.add(firstt);
+    }
+
+    public Question getCurrentQuestion() {
+        if (this.currentQuestion >= this.questions.size()) {
+            this.currentQuestion = 0;
+        }
+        return this.questions.get(this.currentQuestion);
+
     }
 }
