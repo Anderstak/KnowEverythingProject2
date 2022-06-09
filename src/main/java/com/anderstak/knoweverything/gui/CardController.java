@@ -49,6 +49,7 @@ public class CardController implements Initializable {
 
         this.setCard(topic.getCurrentCard());
         this.updateButtons();
+        this.btwatchQuestion.setDisable(true);
 
         btBackMid.setOnAction(event -> {
             System.out.println("back pressed");
@@ -83,11 +84,20 @@ public class CardController implements Initializable {
         }
     }
 
-
+//int BlockAnswer = ;
     void setCard(Card card) {
         if (card == null) {
             throw new RuntimeException("Такой карточки нет! Это было неожиданно...");
         }
+//TODO if дописать условие в котором будут условия того, что кнопку можно разблокировать
+        if (this.topic.currentCard == this.topic.getCardSize() - 1 ) {
+            this.btwatchQuestion.setDisable(false);
+        }
+        //TODO графический интерфейс
+
+
+
+        //TODO убрать предыдущий ответ - сделанно
 
         this.LNameCard.setText(card.getName());
         this.ImageMid.setImage(card.getImage());

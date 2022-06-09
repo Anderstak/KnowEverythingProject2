@@ -103,7 +103,7 @@ public class Topic {
 
     public Question getNextQuestion() {
         // TODO: аналогично, как с карточками
-        if (this.currentQuestion >= 1) {
+        if (this.currentQuestion <= this.questions.size()) {
             this.currentQuestion += 1;
             return this.questions.get(this.currentQuestion);
         } else {
@@ -119,7 +119,11 @@ public class Topic {
         if (this.currentQuestion >= this.questions.size()) {
             this.currentQuestion = 0;
         }
-        return this.questions.get(this.currentQuestion);
+        if(this.currentQuestion < this.questions.size()){
+            return this.questions.get(this.currentQuestion);
+        }else{
+            return null;
+        }
 
     }
 }

@@ -8,33 +8,33 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anderstak.knoweverything.gui.CardController">
+<SplitPane dividerPositions="0.4040178571428572" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #b3deff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anderstak.knoweverything.gui.CardController">
    <items>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="247.0" style="-fx-background-color: #08e8de;">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="175.0" style="-fx-background-color: #b3deff;">
          <children>
-            <Button id="btBMid" fx:id="btBackMid" layoutX="36.0" layoutY="350.0" mnemonicParsing="false" text="Назад" textFill="BLUE" />
-            <Text fx:id="TextCard" fill="#ff6d6d" layoutX="16.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="148.1366958618164">
+            <Button id="btBMid" fx:id="btBackMid" layoutX="16.0" layoutY="351.0" mnemonicParsing="false" style="-fx-background-color: #1974d2;" text="Назад" textFill="WHITE" AnchorPane.bottomAnchor="21.0" />
+            <Text fx:id="TextCard" fill="#0055ff" layoutX="16.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="209.47003936767578" AnchorPane.bottomAnchor="357.0" AnchorPane.topAnchor="20.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="421.0" prefWidth="455.0" style="-fx-background-color: #08e8de;">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="391.0" prefWidth="403.0" style="-fx-background-color: #80c8ff;">
          <children>
             <Label id="btLMid" fx:id="btLMid" layoutX="14.0" layoutY="14.0" text="Запоминай" textFill="#0055ff">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button id="btFMid" fx:id="btForwardMid" layoutX="323.0" layoutY="350.0" mnemonicParsing="false" text="Вперед" textFill="BLUE" />
-            <ImageView id="ImMid" fx:id="ImageMid" fitHeight="189.0" fitWidth="262.0" layoutX="77.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" />
+            <Button id="btFMid" fx:id="btForwardMid" layoutX="283.0" layoutY="350.0" mnemonicParsing="false" style="-fx-background-color: #1974d2;" text="Вперед" textFill="WHITE" AnchorPane.bottomAnchor="21.999999999999982" />
+            <ImageView id="ImMid" fx:id="ImageMid" fitHeight="189.0" fitWidth="262.0" layoutX="45.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="LNameCard" layoutX="20.0" layoutY="36.0" prefHeight="35.0" prefWidth="346.0" text="Label" textFill="#0044ff">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btwatchQuestion" layoutX="92.0" layoutY="310.0" mnemonicParsing="false" onAction="#onSwapSceneClicked" text="Посмотреть вопросы:)" />
+            <Button fx:id="btwatchQuestion" layoutX="92.0" layoutY="310.0" mnemonicParsing="false" onAction="#onSwapSceneClicked" style="-fx-background-color: #caffbf;" text="Посмотреть вопросы:)" />
          </children>
       </AnchorPane>
    </items>

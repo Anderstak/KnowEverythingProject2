@@ -17,7 +17,7 @@ public class Card {
     private Long id;
 
     private String name = "";
-
+    @Lob
     private String text = "";
 
     @Lob
@@ -57,7 +57,7 @@ public class Card {
     }
 
     public void setImage(File image) throws IOException {
-      this.image = Util.imageToBytes(image);
+        this.image = Util.imageToBytes(image);
     }
 }
 

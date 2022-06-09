@@ -3,37 +3,47 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anderstak.knoweverything.gui.QuestionController">
+<!--<VBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anderstak.knoweverything.gui.QuestionController">-->
+<!--   <children>-->
+<!--   </children>-->
+<!--</VBox>-->
+
+<SplitPane dividerPositions="0.35212053571428575" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anderstak.knoweverything.gui.QuestionController">
    <items>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #08e8de;">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #80c8ff;">
          <children>
-            <TextField id="TextQuestion" fx:id="TextQuestion" layoutX="-12.0" layoutY="85.0" prefHeight="200.0" prefWidth="200.0" />
-            <Button id="btBackBack" fx:id="btBackQuestion" layoutX="36.0" layoutY="350.0" mnemonicParsing="false" text="Назад" textFill="BLUE" />
+            <Button id="btBackBack" fx:id="btBackQuestion" layoutX="36.0" layoutY="350.0" mnemonicParsing="false" style="-fx-background-color: #1974d2;" text="Назад" textFill="WHITE" />
+            <Text fx:id="TextQuestion" fill="#0055ff" layoutX="3.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="210.80341720581055" AnchorPane.bottomAnchor="360.0" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
          </children>
       </AnchorPane>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="352.0" style="-fx-background-color: #08e8de;">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="352.0" style="-fx-background-color: #80c8ff;">
          <children>
             <Label id="btLBack" fx:id="LabelQuestion" layoutX="50.0" layoutY="5.0" text="Проверим знания?" textFill="#0013ff">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button id="btFBack" fx:id="btForwardBackQuestion" layoutX="323.0" layoutY="350.0" mnemonicParsing="false" text="Вперед" textFill="BLUE" />
-            <ImageView id="ImBack" fx:id="ImageQuestion" fitHeight="193.0" fitWidth="235.0" layoutX="167.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="btShowCard" layoutX="151.0" layoutY="337.0" mnemonicParsing="false" text="Посмотреть ответ" textFill="#f7ff09" />
-            <Button fx:id="btTrue" layoutX="248.0" layoutY="286.0" mnemonicParsing="false" text="Правильно" textFill="#0af25b" />
-            <Button fx:id="btFalse" layoutX="91.0" layoutY="286.0" mnemonicParsing="false" text="Не правильно" textFill="#0af25b" />
-            <Text fx:id="ShowAnswer" layoutX="27.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+            <Button id="btFBack" fx:id="btForwardBackQuestion" layoutX="295.0" layoutY="349.0" mnemonicParsing="false" style="-fx-background-color: #1974d2;" text="Вперед" textFill="WHITE" />
+            <ImageView id="ImBack" fx:id="ImageQuestion" fitHeight="193.0" fitWidth="211.0" layoutX="27.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btShowCard" layoutX="92.0" layoutY="349.0" mnemonicParsing="false" style="-fx-background-color: #1974d2;" text="Посмотреть ответ" textFill="#595959" />
+            <Button fx:id="btTrue" layoutX="224.0" layoutY="286.0" mnemonicParsing="false" style="-fx-background-color: #a0dea0;" text="Правильно" textFill="#5c5c5c" />
+            <Button fx:id="btFalse" layoutX="68.0" layoutY="286.0" mnemonicParsing="false" style="-fx-background-color: #f5cac3;" text="Не правильно" textFill="#5c5c5c" />
+            <Text fx:id="ShowAnswer" layoutX="262.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="102.00000000000011">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
+            <Button fx:id="ChoiceOfTopics" layoutX="313.0" layoutY="1.0" mnemonicParsing="false" style="-fx-background-color: #1974d2;" text="Выбор тем" textFill="WHITE" />
+            <Text fx:id="WrongAnswer" layoutX="185.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Не правильно" />
+            <Text fx:id="HowManyCorrectAnswer" layoutX="27.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Правильно" wrappingWidth="78.0" />
          </children>
       </AnchorPane>
    </items>
