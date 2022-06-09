@@ -22,7 +22,7 @@ public class TestInitializer {
         t.addCard(c);
         Card b = new Card("Hello.");
         b.setText("Крепостное право");
-        b.setImage(new File(Application.class.getResource("gui/pics/Serfage.jpg").getFile()));
+        b.setImage(new File(Application.class.getResource("gui/pics/GV.jpg").getFile()));
         t.addCard(b);
         Application.topicService.addTopic(t);
 

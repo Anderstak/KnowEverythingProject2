@@ -169,15 +169,13 @@ public class QuestionController implements Initializable {
     }
 
 
-//    public void setChoiceOfTopics (ActionEvent actionEvent) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("TopicScene.fxml"));
-//        SubScene scene = new SubScene(fxmlLoader.load(), 500, 650);
-//        this.root.getChildren().clear();
-//        this.root.getChildren().add(scene.getRoot());
-}
+    public void setChoiceOfTopics(ActionEvent actionEvent) throws IOException {
+        // TODO: скопировать код из TopicController, когда он открывает новую сцену, заменить на TopicScene.fxml
+        // добавить SceneBuilder: onAction
+    }
 
 
 // TODO: сделать аналогично
 
-
+}
 
