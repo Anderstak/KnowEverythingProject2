@@ -23,6 +23,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.security.cert.PolicyNode;
+import java.util.EventObject;
 import java.util.ResourceBundle;
 
 
@@ -52,6 +53,7 @@ public class QuestionController implements Initializable {
 
     int AllAnswer = 0;
     int CorrectAnswer = 0;
+    int UnCorrectAnswer = 0;
     boolean press1 = true;
     boolean press2 = true; //сохраняет то, что кнопка разблокирована или заблокирована
 //    private PolicyNode root;
@@ -66,8 +68,8 @@ public class QuestionController implements Initializable {
         btBackQuestion.setOnAction(event -> {
             this.btShowCard.setDisable(false);
             ShowAnswer.setText("");
-            System.out.println("back pressed");
-            this.setQuestion(topic.getPreviousQuestion());
+//            System.out.println("back pressed");
+//            this.setQuestion(topic.getPreviousQuestion());
             this.updateButtons();
         });
 
@@ -103,6 +105,7 @@ public class QuestionController implements Initializable {
             ShowAnswer.setText("");
             System.out.println("false");
             this.setQuestion(topic.getNextQuestion());
+            this.UnCorrectAnswer = UnCorrectAnswer +1;
             this.AllAnswer = AllAnswer + 1;
             WrongAnswer.setText(AllAnswer - CorrectAnswer + "/" + AllAnswer);
             this.updateButtons();
@@ -111,20 +114,22 @@ public class QuestionController implements Initializable {
 
     private void updateButtons() {
         // TODO: update buttons!
-        if (this.topic.currentQuestion == 0) {//сравниваем два числа
-            // disable back button
-            this.btBackQuestion.setDisable(true);
-        } else {
-            this.btBackQuestion.setDisable(false);
-        }
+//        if (this.topic.currentQuestion == 0) {//сравниваем два числа
+//            // disable back button
+//            this.btBackQuestion.setDisable(true);
+//        } else {
+//            this.btBackQuestion.setDisable(false);
+//        }
+        this.btBackQuestion.setDisable(true);
 
 
-        if (this.topic.currentQuestion == this.topic.getQuestionSize() - 1) { //условие того, что это последняя карточка
-            // disable forward
-            this.btForwardBackQuestion.setDisable(true);
-        } else {
-            this.btForwardBackQuestion.setDisable(false);
-        }
+//        if (this.topic.currentQuestion == this.topic.getQuestionSize() - 1) { //условие того, что это последняя карточка
+//            // disable forward
+//            this.btForwardBackQuestion.setDisable(true);
+//        } else {
+//            this.btForwardBackQuestion.setDisable(false);
+//        }
+        this.btForwardBackQuestion.setDisable(true);
 
 
         if (this.topic.currentQuestion == this.topic.getQuestionSize() - 1) { //условие того, что это последняя карточка
@@ -170,12 +175,10 @@ public class QuestionController implements Initializable {
 
 
     public void setChoiceOfTopics(ActionEvent actionEvent) throws IOException {
-        // TODO: скопировать код из TopicController, когда он открывает новую сцену, заменить на TopicScene.fxml
-        // добавить SceneBuilder: onAction
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("TopicScene.fxml")));
+        Stage appStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        appStage.setScene(scene);
+        appStage.show();
     }
-
-
-// TODO: сделать аналогично
-
 }
 
