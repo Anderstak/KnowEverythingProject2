@@ -93,11 +93,6 @@ public class CardController implements Initializable {
         if (this.topic.currentCard == this.topic.getCardSize() - 1 ) {
             this.btwatchQuestion.setDisable(false);
         }
-        //TODO графический интерфейс
-
-
-
-        //TODO убрать предыдущий ответ - сделанно
 
         this.LNameCard.setText(card.getName());
         this.ImageMid.setImage(card.getImage());

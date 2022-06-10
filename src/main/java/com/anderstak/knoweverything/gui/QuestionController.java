@@ -28,10 +28,6 @@ import java.util.ResourceBundle;
 
 
 public class QuestionController implements Initializable {
-
-    // public VBox root;
-
-
     public Button btBackQuestion;
     public Label LabelQuestion;
     public Button btForwardBackQuestion;
@@ -54,9 +50,6 @@ public class QuestionController implements Initializable {
     int AllAnswer = 0;
     int CorrectAnswer = 0;
     int UnCorrectAnswer = 0;
-    boolean press1 = true;
-    boolean press2 = true; //сохраняет то, что кнопка разблокирована или заблокирована
-//    private PolicyNode root;
 
 
     @Override
@@ -68,8 +61,6 @@ public class QuestionController implements Initializable {
         btBackQuestion.setOnAction(event -> {
             this.btShowCard.setDisable(false);
             ShowAnswer.setText("");
-//            System.out.println("back pressed");
-//            this.setQuestion(topic.getPreviousQuestion());
             this.updateButtons();
         });
 
@@ -113,22 +104,7 @@ public class QuestionController implements Initializable {
     }
 
     private void updateButtons() {
-        // TODO: update buttons!
-//        if (this.topic.currentQuestion == 0) {//сравниваем два числа
-//            // disable back button
-//            this.btBackQuestion.setDisable(true);
-//        } else {
-//            this.btBackQuestion.setDisable(false);
-//        }
         this.btBackQuestion.setDisable(true);
-
-
-//        if (this.topic.currentQuestion == this.topic.getQuestionSize() - 1) { //условие того, что это последняя карточка
-//            // disable forward
-//            this.btForwardBackQuestion.setDisable(true);
-//        } else {
-//            this.btForwardBackQuestion.setDisable(false);
-//        }
         this.btForwardBackQuestion.setDisable(true);
 
 
@@ -144,16 +120,9 @@ public class QuestionController implements Initializable {
         } else {
             this.btFalse.setDisable(false);
         }
-
-
-//        if (this.topic. ) {//сравниваем два числа
-//            // disable back button
-//            this.btTrue.setDisable(true);
-//        } else {
-//            this.btTrue.setDisable(false);
-//        }
-
     }
+
+
 
 
     public void setQuestion(Question question) {
@@ -164,9 +133,6 @@ public class QuestionController implements Initializable {
         this.LabelQuestion.setText(question.getName());
         this.ImageQuestion.setImage(question.getImage());
         this.TextQuestion.setText(question.getText());
-//        this.btShowCard.setText(question.getAnswer());
-
-
     }
 
     public Question getQuestion() {

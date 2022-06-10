@@ -15,36 +15,6 @@ public class TestInitializer {
     public static void initWithSampleData() throws IOException {
 
         Application.topicService.clearAllTopics();
-        Topic t = new Topic("Мемы", "Вкратце и доступно");
-        Card a = new Card("Георгий Витальевич");
-        a.setText("Everyone needs a tortured friend.");
-        a.setImage(new File(Application.class.getResource("gui/pics/Jokes/GV.jpg").getFile()));
-        t.addCard(a);
-        Card b = new Card("Георгий Витальевич");
-        b.setText("Он слишком любит кофе");
-        b.setImage(new File(Application.class.getResource("gui/pics/Jokes/GV2.png").getFile()));
-        t.addCard(b);
-        Card c = new Card("Георгий Витальевич");
-        c.setText("А Вы знали, что он имеет Фан группу...");
-        c.setImage(new File(Application.class.getResource("gui/pics/Jokes/GV3.png").getFile()));
-        t.addCard(c);
-        Card d = new Card("Георгий Витальевич");
-        d.setText("Объясняет математику лучше, чем программирование:)");
-        d.setImage(new File(Application.class.getResource("gui/pics/Jokes/GV4.png").getFile()));
-        t.addCard(d);
-        Card e = new Card("Георгий Витальевич");
-        e.setText("Наш девиз четыре слова:Если новая программа без ошибок компилируется,\n" +
-                "\n" +
-                "Значит, создана не так, пусть ещё отредактируется.\n" +
-                "\n" +
-                "Если жалоб на программу вы давно не получали,\n" +
-                "\n" +
-                "Значит, где-то вы, друзья, с её созданьем подкачали.");
-        e.setImage(new File(Application.class.getResource("gui/pics/Jokes/Java.png").getFile()));
-        t.addCard(e);
-        Application.topicService.addTopic(t);
-
-
         Topic emperors = new Topic("Императоры", "Все императоры вкратце и очень доступно и понятно без регистраций и смс ");
         Card first  = new Card("Павел 1");
         first.setText("1801г Дворцовый переворот. Убийство Павла 1");
