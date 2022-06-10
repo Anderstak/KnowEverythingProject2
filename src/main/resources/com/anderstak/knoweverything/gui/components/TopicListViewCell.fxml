@@ -2,31 +2,29 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="101.0" prefWidth="169.0" style="-fx-background-color: #80c8ff;" type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17">
     <!--<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="355.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"> -->
     <children>
-        <VBox prefHeight="95.0" prefWidth="246.0" style="-fx-background-color: white;">
+        <VBox prefHeight="286.0" prefWidth="269.0" style="-fx-background-color: #80c8ff;" HBox.hgrow="ALWAYS">
             <children>
                 <Label fx:id="topicNameLabel" text="A" textFill="#2f0d0d">
                     <font>
-                        <Font size="20.0"/>
+                        <Font size="20.0" />
                     </font>
                     <VBox.margin>
-                        <Insets left="15.0" top="10.0"/>
+                        <Insets left="15.0" top="10.0" />
                     </VBox.margin>
                 </Label>
                 <Label fx:id="descriptionLabel" text="A" textFill="#2f0d0d">
                     <font>
-                        <Font size="13.0"/>
+                        <Font size="13.0" />
                     </font>
                     <VBox.margin>
-                        <Insets left="15.0" top="10.0"/>
+                        <Insets left="15.0" top="10.0" />
                     </VBox.margin>
                 </Label>
             </children>

@@ -16,14 +16,32 @@ public class TestInitializer {
 
         Application.topicService.clearAllTopics();
         Topic t = new Topic("Мемы", "Вкратце и доступно");
-        Card c = new Card("Георгий Витальевич");
-        c.setText("Everyone needs a tortured friend.");
-        c.setImage(new File(Application.class.getResource("gui/pics/GV.jpg").getFile()));
-        t.addCard(c);
-        Card b = new Card("Hello.");
-        b.setText("Крепостное право");
-        b.setImage(new File(Application.class.getResource("gui/pics/GV.jpg").getFile()));
+        Card a = new Card("Георгий Витальевич");
+        a.setText("Everyone needs a tortured friend.");
+        a.setImage(new File(Application.class.getResource("gui/pics/Jokes/GV.jpg").getFile()));
+        t.addCard(a);
+        Card b = new Card("Георгий Витальевич");
+        b.setText("Он слишком любит кофе");
+        b.setImage(new File(Application.class.getResource("gui/pics/Jokes/GV2.png").getFile()));
         t.addCard(b);
+        Card c = new Card("Георгий Витальевич");
+        c.setText("А Вы знали, что он имеет Фан группу...");
+        c.setImage(new File(Application.class.getResource("gui/pics/Jokes/GV3.png").getFile()));
+        t.addCard(c);
+        Card d = new Card("Георгий Витальевич");
+        d.setText("Объясняет математику лучше, чем программирование:)");
+        d.setImage(new File(Application.class.getResource("gui/pics/Jokes/GV4.png").getFile()));
+        t.addCard(d);
+        Card e = new Card("Георгий Витальевич");
+        e.setText("Наш девиз четыре слова:Если новая программа без ошибок компилируется,\n" +
+                "\n" +
+                "Значит, создана не так, пусть ещё отредактируется.\n" +
+                "\n" +
+                "Если жалоб на программу вы давно не получали,\n" +
+                "\n" +
+                "Значит, где-то вы, друзья, с её созданьем подкачали.");
+        e.setImage(new File(Application.class.getResource("gui/pics/Jokes/Java.png").getFile()));
+        t.addCard(e);
         Application.topicService.addTopic(t);
 
 
@@ -45,14 +63,35 @@ public class TestInitializer {
         fourth.setImage(new File(Application.class.getResource("gui/pics/emperors/Alexandr2.jpg").getFile()));
         emperors.addCard(fourth);
         Card fifth = new Card("Александр 3");
-        fifth.setText("Александр 3 1881-1894. Начало строительство Транссибирской магистрали 1891г. ");
+        fifth.setText("Александр 3 1881-1894. Начало строительство Транссибирской магистрали 1891г. Железная дорога между Челябинском и Владивостоком, соединяющая европейскую часть России с крупнейшими восточносибирскими и дальневосточными промышленными городами.");
         fifth.setImage(new File(Application.class.getResource("gui/pics/emperors/Alexandr3.jpg").getFile()));
         emperors.addCard(fifth);
+
         Question firstt = new Question();
-        firstt.setText("В каком году было убийство Павла 1");
+        firstt.setText("В каком году было убийство Павла 1?");
         firstt.setImage(new File(Application.class.getResource("gui/pics/emperors/Pavel1.jpg").getFile()));
         firstt.setAnswer("1861г");
         emperors.addQuestion(firstt);
+        Question secondd = new Question("");
+        secondd.setText("Какие страны вошли в Священный союз?");
+        secondd.setImage(new File(Application.class.getResource("gui/pics/emperors/Alexandr1.jpg").getFile()));
+        secondd.setAnswer("Российская империя, Австрия, Пруссия");
+        emperors.addQuestion(secondd);
+        Question thirdd = new Question("");
+        thirdd.setText("При каком императоре произошло восстание декабристов 1825г?");
+        thirdd.setImage(new File(Application.class.getResource("gui/pics/emperors/Nikolay1.jpg").getFile()));
+        thirdd.setAnswer("При Николаи 1");
+        emperors.addQuestion(thirdd);
+        Question fourthh = new Question("");
+        fourthh.setText("В каком году было отменено крепостное право?");
+        fourthh.setImage(new File(Application.class.getResource("gui/pics/emperors/Alexandr2.jpg").getFile()));
+        fourthh.setAnswer("В 1861");
+        emperors.addQuestion(fourthh);
+        Question fifthh = new Question("");
+        fifthh.setText("От куда и до куда располагалась Транссибирская магистраль?");
+        fifthh.setImage(new File(Application.class.getResource("gui/pics/emperors/Alexandr3.jpg").getFile()));
+        fourthh.setAnswer("Между Челябинском и Владивостоком");
+        emperors.addQuestion(fifthh);
         Application.topicService.addTopic(emperors);
 
         Topic PeopleAreGiants = new Topic("ЛЮДИ ГИГАНТЫ", "Люди гиганты вкратце и очень доступно и понятно без регистраций и смс ");
